@@ -39,6 +39,18 @@ async function serverData ({
   
   /** Cuando se obtiene una respuesta positiva del server se crean dos botones ( btn3D y btnAR ) */
   function createBtns({father,sku,idCompany,link3D,color,zBtns,zModal,ButtonsY}){
+
+    let typeDevice = null;
+
+    if(window.innerWidth > 1020){
+      typeDevice='DESK';
+      father=document.querySelector('section > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div');
+    }
+    else if (window.innerWidth > 500 && window.innerWidth < 1920)typeDevice='TABLET'
+    else {
+      typeDevice='MOBILE';
+      father=document.querySelector('div:nth-child(2) > div > div:nth-child(2) > div > div > div > div > div');
+    };
   
     const fatherContainer = father;
   
@@ -58,8 +70,15 @@ async function serverData ({
     containerPrincipalBtns.querySelector('.btnMudi3D').addEventListener('click',()=>{ createModal3D({link3D:link3D,color:color,zModal:zModal}) },false);
     containerPrincipalBtns.querySelector('.btnMudiAR').addEventListener('click',()=>{ createModalAR({color:color, idCompany:idCompany, sku:sku,zModal:zModal}) },false);
   
-    const elementoHermano = document.querySelector('div.vtex-store-components-3-x-carouselGaleryThumbs.vtex-store-components-3-x-carouselGaleryThumbs--swipper-block.dn.h-auto.mt3.db-n');
-    fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano);
+    if(typeDevice==='DESK'){
+      const elementoHermano = document.querySelector('div.vtex-store-components-3-x-carouselGaleryThumbs.vtex-store-components-3-x-carouselGaleryThumbs--swipper-block.dn.h-auto.mt3.db-ns');
+      fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano);
+    }else if( typeDevice ==='TABLET'){
+      console.warn('No hay contenedores HTML para anidar la experiencia 3D y AR de MUDI')
+    }else{
+      const elementoHermano = document.querySelector('.vtex-store-components-3-x-carouselGaleryThumbs');
+      fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano);
+    };    
   
     setTimeout(()=>{
       const tool = document.querySelector('.showTooltipInit');
@@ -252,16 +271,11 @@ async function serverData ({
     sendDataLayer({sku:skuNumber})
   };
 
-
-  setTimeout(()=>{
-    MudiExperience({
-      tokenApi:'oEXzKi59TKP6aUDH6Bba',
-      skuNumber:'2020homeprueba',
-      // skuNumber:document.querySelector('.sku').innerHTML,
-      idCompanyMudi:0,
-      color:'#9c3635',
-      containerBtns:document.querySelector('section > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div'),
-      zIndexModal:1000,
-    })
-  },1500)
-
+  MudiExperience({
+    tokenApi:'lUYijFmIfhozdOfqKvkV',
+    //skuNumber:document.querySelector('.vtex-product-identifier-0-x-product-identifier__value').innerHTML,
+    skuNumber:'7704353446111',
+    idCompanyMudi:'pyde',
+    color:'#008081',
+    zIndexModal:1000,
+  });
