@@ -252,13 +252,16 @@ async function serverData ({
     sendDataLayer({sku:skuNumber})
   };
 
-  MudiExperience({
-    tokenApi:'oEXzKi59TKP6aUDH6Bba',
-    skuNumber:'2020homeprueba',
-    // skuNumber:document.querySelector('.sku').innerHTML,
-    idCompanyMudi:0,
-    color:'#9c3635',
-    containerBtns:document.querySelector('section > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div'),
-    zIndexModal:1000,
-  })
+
+  setTimeout(()=>{
+    MudiExperience({
+      tokenApi:'oEXzKi59TKP6aUDH6Bba',
+      skuNumber:'2020homeprueba',
+      // skuNumber:document.querySelector('.sku').innerHTML,
+      idCompanyMudi:0,
+      color:'#9c3635',
+      containerBtns:document.querySelector('section > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div'),
+      zIndexModal:1000,
+    })
+  },1500)
 
