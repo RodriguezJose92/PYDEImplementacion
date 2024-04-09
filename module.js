@@ -1,4 +1,4 @@
-/* Petición SeverMudi */
+/* Peticion SeverMudi */
 async function serverData ({
     token = undefined,
     sku = undefined
@@ -54,7 +54,7 @@ async function serverData ({
   
     const fatherContainer = father;
   
-    // Creación del contenedor principal para los botones
+    // Creacion del contenedor principal para los botones
     const containerPrincipalBtns = document.createElement('DIV');
     containerPrincipalBtns.classList.add('ContainerBtnsMudi');
     containerPrincipalBtns.id="containerBtnsMudi";
@@ -163,7 +163,7 @@ async function serverData ({
               </div>
   
               <div class="secondContentMudi">
-                  <h3 class="stepTitleMudi qrTitlePart"> Escanea el código QR para ver el producto en realidad aumentada.</h3>
+                  <h3 class="stepTitleMudi qrTitlePart"> Escanea el codigo QR para ver el producto en realidad aumentada.</h3>
                   <div class="containerQRMudi">
                     <img src="https://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=https%3A%2F%2Fviewer.mudi.com.co%2Fv1%2Far%2F%3Fid%3D${idCompany}%26sku%3D${sku}" class="codeQRMudi">
                   </div>
@@ -196,9 +196,9 @@ async function serverData ({
     else if ( navigator.userAgent.includes('iPhone') || navigator.userAgent.includes('iPad')) OSdevice="IOS";
     else OSdevice='DESK';
 
-    /** Evento de visualización */
+    /** Evento de visualizacion */
     dataLayer.push({
-        event:'Evento de visualización Mudi',
+        event:'Evento de visualizacion Mudi',
         valorMudi:1,
         sku:sku,
 
@@ -213,11 +213,11 @@ async function serverData ({
         sistemaOperativo:OSdevice
     });
 
-    /** Evento de intención de compra */
+    /** Evento de intencion de compra */
     if (OSdevice ==='DESK'){
       document.querySelector('body > div.render-container.render-route-store-product > div > div > div.vtex-store__template.bg-base > div > div > div > div:nth-child(4) > div > div:nth-child(2) > div > section > div > div:nth-child(3) > div > div:nth-child(8) > div > div > div > div > div > div > div > button > div').addEventListener('click',()=>{
         dataLayer.push({
-            event:'Evento de intención de compra Mudi',
+            event:'Evento de intencion de compra Mudi',
             valorMudi:1,
             sku:sku,
 
@@ -235,7 +235,7 @@ async function serverData ({
     }else{
       document.querySelector('body > div.render-container.render-route-store-product > div > div > div.vtex-store__template.bg-base > div > div > div > div:nth-child(3) > div > div:nth-child(3) > div > section > div > div:nth-child(3) > div > div:nth-child(8) > div > div > div > div > div > div > div > button > div').addEventListener('click',()=>{
         dataLayer.push({
-            event:'Evento de intención de compra Mudi',
+            event:'Evento de intencion de compra Mudi',
             valorMudi:1,
             sku:sku,
             categoria:document.querySelector('span.vtex-breadcrumb-1-x-arrow.vtex-breadcrumb-1-x-arrow--1.ph2.c-muted-2 > a') ? document.querySelector('span.vtex-breadcrumb-1-x-arrow.vtex-breadcrumb-1-x-arrow--1.ph2.c-muted-2 > a').innerHTML : 'null',
@@ -252,10 +252,10 @@ async function serverData ({
     }
    
 
-    /** Evento de interación AR Mudi */
+    /** Evento de interacion AR Mudi */
     document.getElementById('btnMudiAR').addEventListener('click',()=>{
         dataLayer.push({
-            event:'Evento de interacción AR Mudi',
+            event:'Evento de interaccion AR Mudi',
             valorMudi:1,
             sku:sku,
 
@@ -271,10 +271,10 @@ async function serverData ({
         })
     },false);
 
-    /** Evento de interación 3D Mudi */
+    /** Evento de interacion 3D Mudi */
     document.getElementById('btnMudi3D').addEventListener('click',()=>{
         dataLayer.push({
-            event:'Evento de interacción 3D Mudi',
+            event:'Evento de interaccion 3D Mudi',
             valorMudi:1,
             sku:sku,
             
@@ -292,7 +292,7 @@ async function serverData ({
 
   };
   
-  // Función Main Mudi --
+  // Funcion Main Mudi --
   async function MudiExperience ({
     tokenApi,
     skuNumber,
