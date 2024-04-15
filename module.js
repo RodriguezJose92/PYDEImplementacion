@@ -318,8 +318,7 @@ async function serverData ({
 setTimeout(()=>{
     MudiExperience({
     tokenApi:'lUYijFmIfhozdOfqKvkV',
-    //skuNumber:document.querySelector('.vtex-product-identifier-0-x-product-identifier__value').innerHTML,
-    skuNumber:'7704353446111',
+    skuNumber:document.querySelector('.vtex-product-identifier-0-x-product-identifier__value').innerHTML,
     idCompanyMudi:'pyde',
     color:'#008081',
     zIndexModal:1000,
