@@ -71,7 +71,7 @@ async function serverData ({
     containerPrincipalBtns.querySelector('.btnMudiAR').addEventListener('click',()=>{ createModalAR({color:color, idCompany:idCompany, sku:sku,zModal:zModal}) },false);
   
     if(typeDevice==='DESK'){
-      const elementoHermano = document.querySelector('div.vtex-store-components-3-x-carouselGaleryThumbs.vtex-store-components-3-x-carouselGaleryThumbs--swipper-block.dn.h-auto.mt3.db-ns');
+      const elementoHermano = document.querySelector('[data-testid="thumbnail-swiper"]');
       fatherContainer.insertBefore(containerPrincipalBtns , elementoHermano);
     }else if( typeDevice ==='TABLET'){
       console.warn('No hay contenedores HTML para anidar la experiencia 3D y AR de MUDI')
