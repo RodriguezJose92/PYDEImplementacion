@@ -323,5 +323,6 @@ setTimeout(()=>{
     color:'#008081',
     zIndexModal:1000,
   });
-},2000)
+console.log('pintando experiencia Mudi')
+},5000)
   
