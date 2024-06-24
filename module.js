@@ -44,12 +44,12 @@ async function serverData ({
 
     if(window.innerWidth > 1020){
       typeDevice='DESK';
-      father=document.querySelector('section > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div');
+      father=document.querySelector('.vtex-store-components-3-x-carouselGaleryCursor');
     }
     else if (window.innerWidth > 500 && window.innerWidth < 1920)typeDevice='TABLET'
     else {
       typeDevice='MOBILE';
-      father=document.querySelector('div:nth-child(2) > div > div:nth-child(2) > div > div > div > div > div');
+      father=document.querySelector('.vtex-store-components-3-x-carouselGaleryCursor');
     };
   
     const fatherContainer = father;
